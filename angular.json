@@ -14,6 +14,39 @@
         }
       },
       "architect": {
+        "build-webpack": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.js",
+              "replaceDuplicatePlugins": true,
+              "mergeStrategies": {
+                "entry": "append",
+                "output": "replace",
+                "optimization": "replace"
+              }
+            },
+            "outputPath": "dist/ng722",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "serve-webpack": {
+          "builder": "@angular-builders/dev-server:generic",
+          "options": {
+            "browserTarget": "ng722:build-webpack"
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
