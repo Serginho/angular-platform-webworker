@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "bworker": "ng run ng722:build-worker",
+    "bworker": "ng run ng722:build-webpack",
     "sworker": "ng run ng722:serve-webpack"
   },
   "private": true,
